@@ -1,0 +1,53 @@
+from tkinter import *
+
+window = Tk()
+window.title("Beach Scene")
+window.geometry("400x300")
+
+Canvas = Canvas(window, width=400, height=300)
+Canvas.pack()
+
+# Sky (sunset effect)
+Canvas.create_rectangle(0, 0, 400, 150, fill="#FF8C42")  # orange sky
+
+# Sea
+Canvas.create_rectangle(0, 150, 400, 220, fill="#1E90FF")
+
+# Sand
+Canvas.create_rectangle(0, 220, 400, 300, fill="#F4D03F")
+
+# Sun (sunset)
+Canvas.create_oval(280, 60, 340, 120, fill="yellow", outline="")
+
+# Small house (hut)
+Canvas.create_rectangle(50, 190, 110, 240, fill="#8B4513")  # base
+Canvas.create_polygon(50, 190, 80, 160, 110, 190, fill="#A52A2A")  # roof
+Canvas.create_rectangle(70, 210, 90, 240, fill="black")  # door
+
+# Coconut tree 1
+Canvas.create_rectangle(200, 170, 210, 240, fill="#8B5A2B")  # trunk
+Canvas.create_oval(180, 140, 230, 190, fill="green")  # leaves
+Canvas.create_oval(170, 150, 220, 200, fill="green")
+Canvas.create_oval(190, 130, 240, 180, fill="green")
+
+# Coconut tree 2
+Canvas.create_rectangle(240, 180, 250, 250, fill="#8B5A2B")
+Canvas.create_oval(220, 150, 270, 200, fill="green")
+Canvas.create_oval(210, 160, 260, 210, fill="green")
+Canvas.create_oval(230, 140, 280, 190, fill="green")
+
+# Simple human (stick figure)
+# head
+Canvas.create_oval(140, 200, 150, 210, fill="black")
+# body
+Canvas.create_line(145, 210, 145, 230, fill="black", width=2)
+# arms
+Canvas.create_line(135, 220, 155, 220, fill="black", width=2)
+# legs
+Canvas.create_line(145, 230, 135, 245, fill="black", width=2)
+Canvas.create_line(145, 230, 155, 245, fill="black", width=2)
+
+# Text
+Canvas.create_text(200, 280, text="Lyle's Beach Resort", font=("Arial", 12, "bold"))
+
+window.mainloop()
